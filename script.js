@@ -1,1 +1,1 @@
-log.console('працює')
+console.log('працює')
