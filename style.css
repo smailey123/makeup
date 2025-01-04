@@ -1,3 +1,25 @@
 body{
-    background-color: aqua;
+    
 }
+a{
+    text-decoration: none;
+    color:#000000;
+}
+header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding:0 50px 0 50px;
+    justify-content: space-between;
+    background-color: ;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+
+}
+.img_logo{
+    height: 25px;
+    padding:10px 10px 0 0;
+}
+.logos
