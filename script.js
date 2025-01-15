@@ -169,5 +169,112 @@ let products = [
 
 //Функція для отримання значення кукі за ім'ям
 function getCookieValue(cookieName){
+    // Розділяємо всі кукі на окремі частини
+    const cookies = document.cookie.split(';');
+
+    // Шукаємоо кукі з вказиним ім'ям 
+    for (let i = 0; i<cookies.length; i++){
+        const cookie = cookies[i].trim();
+
+        // Перевіряємо чи починається поточне кукі
+        if (cookies.startsWith(cookieName + '=')) {
+            // Якщо так повертаємо значення кукі
+            return cookie.substring(cookieName.length + 1);  //+1 для пропуску символу '='
+        }
+    }
+    // Якщо кукі з вказаним іменем не знайдено, повертаємо порожній рядок або можна повернути null
+    return '';
+}
+
+class Cart{
+    constructon(){
+        this.products = []
+        this.cartCounter = document. querySelector('.cart-container span');
+        this.loadCartFromCookies();
+    }
+    addItem(productIndex) {
+        let productInCart = this.products.find(product => product.productIndex === productIndex);
+        if (productInCart) {
+            productInCart.quantity += 1;
+        }else {
+            this.pruducts.push({
+                productIndex,
+                quantity:1
+            });
+        }
+        this.updateCounter();
+        this.saveCartToCookies();
+    }
+
+    updateCounter(){
+        let count = 0;
+        for (let i = 0; i < this.products.length;i++) {
+            count += this.products[i].quantity;
+        }
+        this.cartCounter.innerHTML = count;
+    }
     
+    updateQuantity(productIndex, newQuantity) {
+        let productInCart = this.products.find(product => productIndex === productIndex);
+        if (productInCart) {
+            productInCart.quantity = newQuantity;
+            if (productInCart.quantity == 0) {
+                console.log(productInCart)
+                this.products = this.products.filter(product => product.productIndex !== productIndex);
+                console.log('fd',this.products)
+            }
+            this.updateCounter();
+            this.saveCartToCookies();
+        }
+    }
+    saveCartToCookies(){
+        let cartJSON = JSCN.stringify(this.products);
+        document.cookies = `cart=S{cartJsON}; max-age=${60 * 60 * 24 * 7};`
+    }
+    loadCartFromCoocies(){
+        let cartCookie = getCookieValue('cart');
+        if (cartCookie && cartCookie !== '') {
+            this.products = JSON.parse(cartCookie);
+            this.updateCounter();
+        }
+    }
+    calculateTotal(){
+        let total = 0;
+        for(let i = 0;i < this.products.length;i++){
+            total += products[this.products[i].productIndex].price * this.products[i].quantity;
+        }
+        return total;
+    }
+}
+const cart = new Cart();
+
+function getProductCart(product){
+    return `<article class="item">
+                    <div class="items-div-img"><img class="item-img" src="https://u.makeup.com.ua/y/yw/ywc5thlwmnwj.jpg"></div>
+                    <h2 class="items-h2">Maybelline New York Lash Sensational Sky High</h2>
+                    <p class="item-desc">Туш для безмежного подовження та обєму вій</p>
+                    <p>460</p>
+                    <button class="item-buy">
+                        <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/1077/1077979.png">
+                        Купити
+                    </button>
+                </article>`
+}
+function printProducts(_products) {
+    let localProducts = _products ||products
+    let itemsContainer = document.querySelector('.items');
+    itemsContainer.innerHTML = '';
+    if(!localProducts.length) {
+        itemsContainer.innerHTML = '<h1>Нема товару</h1>';
+        return;
+    }
+
+    for(let i = 0;i< localProducts.length;i++){
+        itemsContainer.innerHTML += getProductCart(localProducts[i]);
+    }
+
+    let bueButtons = document.querySelectorAll('item-buy');
+    for(let i = 0;i < buyButtons.length;i++){
+        buyButtons[i].addEventListener('click',() => cart.addItem(i))
+    }
 }
