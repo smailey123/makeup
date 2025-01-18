@@ -1,3 +1,6 @@
+body{
+    background-color:#e9ffeb
+}
 a{
     text-decoration: none;
     color:#000000;
@@ -11,7 +14,7 @@ a{
     position: fixed;
     top:0;
     left: 0;
-    right: 0;
+    right: 0;   
     /* margin:40px; */
     background:#ffffff;
 }
@@ -47,6 +50,14 @@ a{
     border-right: 2px solid #1D5825;
     padding-right: 6%
 }
+.catalog:hover{
+    /* background-color: #71c77c;
+    padding:5px; */
+    color:#116000;
+}
+.catalog_:hover{
+    color:#116000;
+}
 
 .items{
     display: flex;
@@ -63,8 +74,7 @@ a{
     padding:20px 10px;
     color: #ffffff;
     width:320px;
-    background-color: #9dd3a0;
-    /* background: linear-gradiend(to left, rgb(165, 255, 180), rgb(23, 106, 40)); */
+    background: linear-gradient(#9dd3a0, #5a1c2e);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .items-div-img{
@@ -105,11 +115,13 @@ a{
     border:none;
     outline: none;
     cursor: pointer;
-    color: #ffffff;
+    color: #5a1c2e;
     padding: 12px;
     width: fit-content;
     font-size:20px;
-    /* background-color: #71c77c; */
-    background: linear-gradiend(to left, rgb(165, 255, 180), rgb(23, 106, 40));
+    background-color: #71c77c;
+    /* background: linear-gradient(to left , blue, red); */
+    background: linear-gradient(45deg, #bf6870, #67a55a);
+    /* background: linear-gradient(#71c77c, #9198e5); */
 
 }
