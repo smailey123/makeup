@@ -215,7 +215,7 @@ class Cart{
     }
     // зміна кількості одного товара 
     updateQuantity(productIndex, newQuantity) {
-        let productInCart = this.products.find(product => productIndex === productIndex);//перевіряємо чи вже існує цей товар в корзині
+        let productInCart = this.products.find(product => productIndex === product.productIndex);//перевіряємо чи вже існує цей товар в корзині
         if (productInCart) {
             productInCart.quantity = newQuantity;
             if (productInCart.quantity == 0) {
@@ -229,7 +229,7 @@ class Cart{
     }
     saveCartToCookies(){//збереження кошику в кукі
         let cartJSON = JSON.stringify(this.products);
-        document.cookies = `cart=S{cartJSON}; max-age=${60 * 60 * 24 * 7}; path=/`;
+        document.cookie = `cart=${cartJSON}; max-age=${60 * 60 * 24 * 7}; path=/`;
     }
     loadCartFromCookies(){
         let cartCookie = getCookieValue('cart');
@@ -252,7 +252,7 @@ function getProductCart(product){
     return `<article class="item"><div class="items-div-img"><img class="item-img" src="${product.image}"></div>
                     <h2 class="items-h2">${product.title}</h2>
                     <p class="item-desc">${product.description}</p>
-                    <p>${product.price}</p>
+                    <p>${product.price} грн</p>
                     <button class="item-buy">
                         <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/1077/1077979.png">
                         Купити
@@ -285,7 +285,7 @@ function printProducts(_products) {
         itemsContainer.innerHTML += getProductCart(localProducts[i]);
     }
     //отримаємо всі книпки 'купити' та додаємо на кожну кнопку подію для додавання 
-    let buyButtons = document.querySelectorAll('item-buy');
+    let buyButtons = document.querySelectorAll('.item-buy');
     for(let i = 0;i < buyButtons.length;i++){
         buyButtons[i].addEventListener('click',() => cart.addItem(i))
     }
@@ -299,7 +299,7 @@ function onSearch(event){
     event.preventDefault()
     let localProducts = products.filter(product => 
         product.title.toLocaleLowerCase().includes(
-            event.target.value.toLocaleLoverCase()
+            event.target.value
         ));
     
     printProducts(localProducts);
