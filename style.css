@@ -125,3 +125,8 @@ a{
     /* background: linear-gradient(#71c77c, #9198e5); */
 
 }
+.div-registration{
+    width:8px;
+    height:8px;
+    background-color: #21c500;
+}

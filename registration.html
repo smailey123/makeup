@@ -17,7 +17,7 @@
                     <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/751/751463.png">
                     <input class="search" placeholder="Пошук">
                 </div>
-                <a href="registration.html">
+                <a class="reg-link" href="registration.html">
                     <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/6386/6386976.png">
                     <!-- <div class="div-registration"></div> -->
                 </a>
@@ -40,18 +40,14 @@
 
     </header>
     <main>
-            <section class="items">
-                 <!-- <article class="item">
-                    <div class="items-div-img"><img class="item-img" src="https://u.makeup.com.ua/y/yw/ywc5thlwmnwj.jpg"></div>
-                    <h2 class="items-h2">Maybelline New York Lash Sensational Sky High</h2>
-                    <p class="item-desc">Туш для безмежного подовження та обєму вій</p>
-                    <p>460 ₴</p>
-                    <button class="item-buy">
-                        <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/1077/1077979.png">
-                        Купити
-                    </button>
-                </article>  -->
-            </section>
+            <form onsubmit="onSubmit(e)">
+                <h1 class="registratson-header">Вход в личный кабинет</h1>
+                <input id="name-input" type="text" class="registratson-input" placeholder="Ім'я">
+                <input id="password-input" type="password" class="registratson-input" placeholder="Пароль">
+                <button class="registratson-button" >Вхід</button>
+
+                <a class="registratson">Рейстрація</a>
+            </form>
         
     </main>
     <footer>
@@ -76,6 +72,7 @@
             <p>Палетка для макіяжу</p>
         </div>
     </footer>
+    <script src="registration.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -305,3 +305,12 @@ function onSearch(event){
     printProducts(localProducts);
 }
 search.addEventListener('change',onSearch)
+
+
+
+let regData = getCookieValue('regData')
+let regLink = document.querySelector('.reg-link')
+
+if (regData.name){
+    regLink.innerHTML += '<div class="div-registration"></div>'
+}
