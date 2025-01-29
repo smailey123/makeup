@@ -1,0 +1,77 @@
+body{
+    background-color: #184f1f;
+}
+.makeup{
+    border-bottom:2px solid #fff;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main{
+    background-color: #ffffff;
+    width: 60%;
+    margin:5% 20% 5% 20%;
+}
+.registratson-header{
+    text-align: center;
+    padding:30px
+}
+.registratson-input{
+    display: flex;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+    border: 2px solid #1D5825;
+    padding:5px;
+    margin:10px;
+    font-size: 18px;
+}
+.button-enter{
+    margin:10px;
+    padding: 10px 60px 10px 60px;
+    border-radius: 5px;
+    background-color: #1D5825;
+    color:#fff;
+    font-size: 15px;
+    border:2px solid #1D5825;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+}
+.h2-enter{
+    text-align: center;
+    color:#777777;
+    font-size: 25px;
+}
+.registration-div{
+    display: flex;
+    justify-content:space-between;
+    background-color: #e4e4e4;
+    height: 40px;
+    align-items: center;
+    padding: 1% 2% 1% 2%;
+    width: 60%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    margin: 5% 18% 5% 18%;
+}
+.registratson-button{
+    margin:2%;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+    border: 1px solid #1D5825;
+    padding:5px;
+    margin:10px;
+    font-size: 15px;
+    width: 70px;
+}
+.div-a{
+    background-color: #e4e4e4;
+    border-radius: 5px;
+    border: 1px solid #bb0000;
+    padding:5px;
+    margin:10px;
+    font-size: 18px;
+}

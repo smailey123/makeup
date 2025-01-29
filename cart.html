@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -17,8 +18,11 @@
                     <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/751/751463.png">
                     <input class="search" placeholder="Пошук">
                 </div>
-                <a href=""><img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/6386/6386976.png"></a>
-                <a href="" class="cart-container">
+                <a class="reg-link" href="registration.html">
+                    <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/6386/6386976.png">
+                    <div id="div-registration" class="div-registration"></div> 
+                </a>
+                <a href="cart.html" class="cart-container">
                     <img class="img_logo" src="https://cdn-icons-png.flaticon.com/128/1077/1077979.png">
                     <span>0</span>
                 </a>
@@ -52,7 +56,38 @@
         <p class="total">Сума замовлення: <span class="total-price"></span></p>
         <button class="confirm-button">Оформити замовлення</button>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer-div">
+            <div class="footer-div-section">
+                <div class="footer-div-article">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8016/8016582.png"width='100px'>
+                    <p class="div-section-p">Онлайн оплата без комісії</p>
+                </div>
+                <div class="footer-div-article">
+                    <img src="https://cdn-icons-png.flaticon.com/128/709/709790.png"width='100px'>
+                    <p class="div-section-p">Безкоштовна доставка</p>
+                </div>
+                <div class="footer-div-article">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4188/4188484.png"width='100px'>
+                    <p class="div-section-p">Гарантія повернення</p>
+                </div>
+            </div>
+            <div class="footer-div-section-2">
+                <ul class="div-section-ul">Каталог</ul>
+                <li class="div-section-li">Очі</li>
+                <li class="div-section-li">Брови</li>
+                <li class="div-section-li">Губи</li>
+                <li class="div-section-li">Обличчя</li>
+                <li class="div-section-li">Нігті</li>
+                <li class="div-section-li">Палетка для макіяжу</li>
+            </div>
+        </div>
+        <div class="footer-div">
+            <img id="viber" class="footer-div-img" src="https://cdn-icons-png.flaticon.com/128/160/160198.png" width="50px" height="50px">
+            <img id="telegram" class="footer-div-img" src="https://cdn-icons-png.flaticon.com/128/13266/13266190.png"width="50px" height="50px">
+            <img id="instagram" class="footer-div-img" src="https://cdn-icons-png.flaticon.com/128/1362/1362857.png"width="50px" height="50px">
+            <img id="facebook" class="footer-div-img" src="https://cdn-icons-png.flaticon.com/128/665/665209.png"width="50px" height="50px">
+        </div>
     <script src="script.js"></script>
     <script src="cart.js"></script>
 </body>

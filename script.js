@@ -309,8 +309,10 @@ search.addEventListener('change',onSearch)
 
 
 let regData = getCookieValue('regData')
-let regLink = document.querySelector('.reg-link')
+let regLink = document.getElementById('div-registration')
 
-if (regData.name){
-    regLink.innerHTML += '<div class="div-registration"></div>'
+console.log('regData', regData, regLink.innerHTML)
+if (regData){
+    regLink.style.display = 'block'
 }
+console.log(regLink.innerHTML)

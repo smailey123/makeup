@@ -1,9 +1,8 @@
-let name = document.getElementById('name-input').value
-let password = document.getElementById('password-input').value
 let registration_button = document.querySelector('.registratson-button')
 
-function onSubmit (e){
-    e.preventDefault()
+function onSubmit (){
+    let name = document.getElementById('name-input').value
+    let password = document.getElementById('password-input').value
     console.log(name,password)
     let dataJSON = JSON.stringify({name:name, password});
     document.cookie = `regData=${dataJSON}; max-age=${60 * 60 * 24 * 7}; path=/`;
@@ -11,5 +10,3 @@ function onSubmit (e){
 }
 
 registration_button.addEventListener('click', onSubmit)
-
-x
