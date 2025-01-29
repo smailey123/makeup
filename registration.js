@@ -6,7 +6,7 @@ function onSubmit (){
     console.log(name,password)
     let dataJSON = JSON.stringify({name:name, password});
     document.cookie = `regData=${dataJSON}; max-age=${60 * 60 * 24 * 7}; path=/`;
-    window.location.href = "/"
+    window.location.href = "https://smailey123.github.io/makeup/index.html"
 }
 
 registration_button.addEventListener('click', onSubmit)
